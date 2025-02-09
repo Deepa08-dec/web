@@ -43,5 +43,6 @@ def get_news():
     return jsonify(news_data)
 
 if _name_ == '_main_':
-    db.create_all()
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
